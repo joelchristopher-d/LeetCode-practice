@@ -15,4 +15,3 @@ class Solution:
             res += max(set_count, n - set_count) * val
                
         return res
-        
