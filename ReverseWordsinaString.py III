@@ -1,0 +1,14 @@
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        l=s.split(" ")
+        for i in range(len(l)):
+            j=list(l[i])
+            l[i] = "".join(self.reverse(j,0,len(j)))
+        return " ".join(l)
+
+    def reverse(self,s,i,n):
+        if i>= n//2:
+    #         print(s)
+            return s
+        s[i],s[n-i-1]=s[n-i-1],s[i]
+        return self.reverse(s,i+1,n)
