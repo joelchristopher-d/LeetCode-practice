@@ -14,4 +14,25 @@ class Solution:
                 p.insert(j,nums[0])
                 res.append(p)
         return res
+
+
+
+def perm(nums,ds,mapp,res):
+    if len(ds)==len(nums):
+        res.append(list(ds))
+        return
+    
+    for i in range(len(nums)):
+        if mapp[i]==False:
+            mapp[i]=True
+            ds.append(nums[i])
+            perm(nums,ds,mapp,res)
+            ds.pop()
+            mapp[i]=False
+            
+
+nums = [1,2,3]
+res=[]
+perm(nums,[],[False,False,False],res)
+print(res)
         
